@@ -1,7 +1,7 @@
 import "./Banner.scss";
 import bannerimg  from "../../../assets/bgbanner.jpg";
 import room1 from "../../../assets/Room1.jpeg";
-
+import img from "../../../assets/img22.jpeg";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 const Banner = () => {
@@ -16,7 +16,7 @@ const Banner = () => {
                 
                </div>
                <div>
-                    <img className="h-[550px]" src={bannerimg} alt=""/>
+                    <img className="h-[550px]" src={img} alt=""/>
              
                 </div>
                

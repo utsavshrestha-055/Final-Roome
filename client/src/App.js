@@ -6,6 +6,9 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Overview from "./components/Overview/Overview";
 import { useState, useEffect } from "react";
+import Admin from "./components/admin dashboard/admin";
+import ContactUs from "./components/ContactUs/ContactUs";
+import AboutUs from "./components/AboutUs/AboutUs";
 
 function App() {
 
@@ -19,7 +22,9 @@ function App() {
             <Route path="/Rooms/:id" element={<Rooms heading={"category-Room"}/>}/>
             <Route path="/Flats/:id" element={<Flats heading={"category-Flat"}/>}/>
             <Route path="/o/:id" element={<Overview/>}/>
-
+            <Route path="/ad/:id" element={<Admin/>}/>
+            <Route path="cu/:id" element ={<ContactUs/>}/>  
+            <Route path="au/:id" element ={<AboutUs/>}/>  
         </Routes>
         <Footer/>
     

@@ -6,7 +6,6 @@ import {AiOutlineHeart} from "react-icons/ai";
 import {HiOutlineSearch} from "react-icons/hi";
 import {MdOutlineFavoriteBorder} from "react-icons/md";
 import {RiAccountCircleLine} from "react-icons/ri";
-
 import Search from "./Search/Search";
 import Fav from "../Fav/Fav";
 import FavItems from "../Fav/FavItems/FavItems";
@@ -43,9 +42,9 @@ return (
        <li onClick={()=> goToHome()}>Home</li>
       <li onClick={()=> navigate("/Rooms/:id")}>Rooms</li>
       <li onClick={()=> navigate("/Flats/:id")}>Flat</li>
-      <li onClick={()=> navigate("/Contact/:id")}>Contact Us</li>
-                <li>About us</li>
-                <li>Terms & Conditions </li>
+      <li onClick={()=> navigate("/Cu/:id")}>Contact Us</li>
+                <li onClick={()=> navigate("/au/:id")}>About us</li>
+           
             </ul>
             
             <div className="right"><HiOutlineSearch onClick={()=> setShowSearch(true)}/>

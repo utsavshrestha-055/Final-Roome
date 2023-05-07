@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import useFetch from "../../../hooks/useFetch";
 
 const Search = ({setShowSearch}) => {
+    
 const [query , setquery]= useState("");
 const Navigate= useNavigate();
 const onChange= (event)=>{
