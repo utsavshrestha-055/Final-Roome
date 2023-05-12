@@ -7,11 +7,10 @@ const Rooms = ({ heading }) => {
   const { data } = useFetch(`/api/alls?populate=*&filters[type]=rooms`);
   if (!data) return;
 
-
   return (
     <div className="Rooms-container ">
-      <div className="sec-heading pl-8">{heading}</div>
-      <div className="Rooms grid grid-cols-5 gap-4 pl-8">
+      <div className="pl-8 sec-heading">{heading}</div>
+      <div className="grid grid-cols-5 gap-4 pl-8 Rooms">
         <>
           {data &&
             data.data.map((item) => (
@@ -34,10 +33,10 @@ const Rooms = ({ heading }) => {
                 </div>
 
                 <div className="Rooms-details">
-                <div key={item.id} className="location">
-                {item.attributes.location}
+                  <div key={item.id} className="location">
+                    {item.attributes.location}
                   </div>
-                  <span key={item.id} className="price">
+                  <span key={`price-${item.id}`} className="price">
                     रू {item.attributes.price}
                   </span>
                 </div>
