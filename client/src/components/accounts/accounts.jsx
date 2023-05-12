@@ -14,7 +14,7 @@ const Accounts = ({ setShowAccount }) => {
   const { user, checkuser } = useContext(Context);
   const { login, checklogin } = useContext(Context);
   const { signup, checksignup } = useContext(Context);
-  const { user_data, set_user_data } = useContext(Context);
+  const { user_data , set_user_data } = useContext(Context);
 
 
 
@@ -55,15 +55,16 @@ const Accounts = ({ setShowAccount }) => {
           </span>
         </div>
    
-        {user && (
-      <div class="card">
-  
+        { user && (
+      < div class="card">
+  <img src={user_data.data[0].attributes.img.data.attributes.url} alt=""/>
   <h1>{user_data.data[0].attributes.username}</h1>
-  <p class="title">CEO & Founder, Example</p>
+  <p class="title"></p>
   <p>Harvard University</p>
   <p><button onClick={()=>{ 
     checkuser(false);
       checklogin(true);
+      setShowAccount(false);
       checksignup(false);
       }}>Logout</button></p>
 </div>
@@ -149,11 +150,10 @@ const Accounts = ({ setShowAccount }) => {
                         class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 "
                         onClick={() => login_data()}
                       >
-                        Sign in
-                      </button>
+Submit                      </button>
                       <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                         Don't have an account yet?{" "}
-                        <button
+                        <div
                           onClick={() => {
                             checklogin(false);
                             checksignup(true);
@@ -161,7 +161,7 @@ const Accounts = ({ setShowAccount }) => {
                           class="font-medium text-primary-600 hover:underline dark:text-primary-500"
                         >
                           Sign up
-                        </button>
+                        </div>
                       </p>
                     </form>
                   </div>
@@ -249,8 +249,8 @@ const Accounts = ({ setShowAccount }) => {
                         Submit
                       </button>
                       <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-                        Already have an account yet?{" "}
-                        <button
+                        Already have an account?{" "}
+                        <div
                           onClick={() => {
                             checklogin(true);
                             checksignup(false);
@@ -258,7 +258,7 @@ const Accounts = ({ setShowAccount }) => {
                           class="font-medium text-primary-600 hover:underline dark:text-primary-500"
                         >
                           SignIn
-                        </button>
+                        </div>
                       </p>
                     </form>
                   </div>

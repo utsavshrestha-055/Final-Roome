@@ -13,6 +13,9 @@ const AppContext = ({ children }) => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+
+  
   const [user, checkuser] = useState(false);
   const [login, checklogin] = useState(true);
   const [signup, checksignup] = useState(false);

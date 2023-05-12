@@ -16,6 +16,9 @@ import { Context } from "../../utils/context";
 
 const Header = () => {
   const navigate = useNavigate();
+  const {user, checkuser} = useContext(Context);
+  const {user_data, set_user_data} = useContext(Context);
+  
   const {ShowFav, setShowFav} = useContext(Context);
   const {ShowSearch, setShowSearch} = useContext(Context);
   const {ShowAccount, setShowAccount} = useContext(Context);
@@ -50,6 +53,7 @@ const Header = () => {
             <HiOutlineSearch onClick={() => setShowSearch(true)} />
             <MdOutlineFavoriteBorder onClick={() => setShowFav(true)} />
             <RiAccountCircleLine onClick={() => setShowAccount(true)} />
+            {user && <div> {user_data.data[0].attributes.username} </div>}
           </div>
         </div>
       </div>

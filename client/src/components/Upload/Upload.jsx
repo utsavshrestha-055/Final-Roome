@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Upload = ({setShowUpload, setShowAccount}) => {
     
-  const {user,}=useContext(Context);
+  const {user}=useContext(Context);
   const nagivate = useNavigate();
   const nologin=()=>{
     alert("login first");
@@ -16,11 +16,14 @@ const Upload = ({setShowUpload, setShowAccount}) => {
 
 
   }
+
+
+  
   
   return (<>
 
-{!user && nologin()}
-{user && (
+
+
   <div className="search-modal">
   <div className="form-field">
  
@@ -78,7 +81,7 @@ const Upload = ({setShowUpload, setShowAccount}) => {
 
   </div>
   </div>
-)}
+
     
       </>
     
