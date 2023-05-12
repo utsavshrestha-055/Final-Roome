@@ -1,40 +1,38 @@
 import React from "react";
-import img from "../../assets/img2.webp"
+import img from "../../assets/img2.webp";
 import "./AboutUs.scss";
 const AboutUs = () => {
   return (
     <>
       <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12  mt-4 md:px-6 py-9 px-4">
         <p class=" mb-4 block text-3xl font-bold text-center main-color">
-          About
+          About Us
         </p>
         <div className="flex lg:flex-row flex-col lg:gap-8 sm:gap-10 gap-12 remove-flex-sm">
           <div className="w-full lg:w-6/12">
             <h2 className="orange-text w-full font-bold lg:text-4xl text-3xl lg:leading-10 leading-9 ">
-            At ROOM_E, 
-            <bR></bR>we're passionate about providing affordable room rentals and top-notch facilities.{" "}
+              At ROOM_E,
+              <bR></bR>we're passionate about providing affordable room rentals
+              and top-notch facilities.{" "}
             </h2>
             <p className="font-normal text-base leading-6 text-gray-600 mt-6">
-            We're always committed to ensuring that you can find comfortable 
-            and budget-friendly accommodation options. Room-E is dedicated to offer the best room rental 
-            experience by providing high-quality rooms and exceptional facilities
-            at affordable prices. Our aim is to make sure that you and your family
-            have access to the best accommodation within your budget.<bR></bR>
+              We're always committed to ensuring that you can find comfortable
+              and budget-friendly accommodation options. Room-E is dedicated to
+              offer the best room rental experience by providing high-quality
+              rooms and exceptional facilities at affordable prices. Our aim is
+              to make sure that you and your family have access to the best
+              accommodation within your budget.<bR></bR>
               <bR></bR>
-            Whether you're looking for short-term or long-term rentals, ROOM-E has 
-            got you covered. We offer a wide range of room as well as flat options to suit your needs, 
-            and our facilities include  24/7 security, drinking water facility
-            and much more. Our friendly team is always ready to assist you in finding 
-            the perfect room and ensuring a comfortable stay.
-
+              Whether you're looking for short-term or long-term rentals, ROOM-E
+              has got you covered. We offer a wide range of room as well as flat
+              options to suit your needs, and our facilities include 24/7
+              security, drinking water facility and much more. Our friendly team
+              is always ready to assist you in finding the perfect room and
+              ensuring a comfortable stay.
             </p>
           </div>
           <div className="w-full lg:w-6/12">
-            <img
-              className="lg:block hidden w-full"
-              src={img}
-              alt="grocery"
-            />
+            <img className="lg:block hidden w-full" src={img} alt="grocery" />
           </div>
         </div>
 
@@ -44,19 +42,22 @@ const AboutUs = () => {
               Our Mission
             </h2>
             <p className="font-normal text-base leading-6 text-gray-600 mt-6 w-full lg:w-10/12 xl:w-9/12">
-            Our mission is to provide exceptional room rentals and facilities 
-            that exceed your expectations. We focus on three key principles to 
-            ensure value and a satisfying experience for our guests:
+              Our mission is to provide exceptional room rentals and facilities
+              that exceed your expectations. We focus on three key principles to
+              ensure value and a satisfying experience for our guests:
             </p>
             <p className="font-normal text-base leading-6 text-gray-600 w-full lg:w-10/12 xl:w-9/12 mt-10">
-            1. Affordable Prices: We offer competitive rental rates and packages, 
-            ensuring that you get the best value for your money.<br /><br />
-            2. Quality Facilities: Our rooms are equipped with 
-            top-notch amenities, including comfortable furnishings,
-            high-speed internet.<br /><br />
-            3.Customer Satisfaction: we prioritize customer satisfaction 
-            by offering competitive and affordable room rental rates without 
-            compromising on quality or comfort.
+              1. Affordable Prices: We offer competitive rental rates and
+              packages, ensuring that you get the best value for your money.
+              <br />
+              <br />
+              2. Quality Facilities: Our rooms are equipped with top-notch
+              amenities, including comfortable furnishings, high-speed internet.
+              <br />
+              <br />
+              3.Customer Satisfaction: we prioritize customer satisfaction by
+              offering competitive and affordable room rental rates without
+              compromising on quality or comfort.
             </p>
           </div>
           <div className="w-full lg:w-6/12">
@@ -100,9 +101,9 @@ const AboutUs = () => {
                     Team
                   </p>
                   <p className="mt-2 font-normal text-base leading-6 text-gray-600">
-                Our platform offers highly flexible and
-                accommodating work schedules, empowering you to manage your
-                rental space on your own terms. 
+                    Our platform offers highly flexible and accommodating work
+                    schedules, empowering you to manage your rental space on
+                    your own terms.
                   </p>
                 </div>
               </div>
@@ -189,9 +190,8 @@ const AboutUs = () => {
                     Press
                   </p>
                   <p className="mt-2 font-normal text-base leading-6 text-gray-600">
-                
-                Our dedicated team will work tirelessly to ensure maximum 
-                visibility and reach for your rental listings. 
+                    Our dedicated team will work tirelessly to ensure maximum
+                    visibility and reach for your rental listings.
                   </p>
                 </div>
               </div>

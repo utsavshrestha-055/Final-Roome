@@ -6,24 +6,17 @@ import Rooms from "../Rooms/Rooms";
 import axios from "axios";
 import AboutUs from "../AboutUs/AboutUs";
 const Home = () => {
-
-
-    return (
-        <div>
-<Banner/>
-<div className="main-content">
-    <div className="layout">
-
-
-<Rooms  heading="homerooms"/>
-<Flats  heading="homeflats"/>
-
-
-</div>
+  return (
+    <div>
+      <Banner />
+      <div className="main-content">
+        <div className="layout">
+          <Rooms heading="Rooms" />
+          <Flats heading="Flats" />
         </div>
-        </div>
-
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Home;

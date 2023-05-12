@@ -18,3 +18,5 @@ export const fetchDataFromApi = async (url) => {
         return err;
     }
 };
+
+
