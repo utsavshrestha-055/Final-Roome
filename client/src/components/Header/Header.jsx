@@ -57,7 +57,7 @@ const Header = () => {
             <MdOutlineFavoriteBorder onClick={() => setShowFav(true)} />
             <RiAccountCircleLine onClick={() => setShowAccount(true)} />
             
-         {user &&  <div onClick={()=>navigate('/p/:id')}> {user_data.data[0].attributes.name} </div>}
+         {user &&  <div className="username" onClick={()=>navigate('/p/:id')}> {user_data.data[0].attributes.name} </div>}
       
           </div>
 

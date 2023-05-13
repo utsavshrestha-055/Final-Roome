@@ -23,7 +23,7 @@ const Accounts = ({ setShowAccount }) => {
     console.log(data);
     postDataToApi("/api/owners", { data: data });
     checklogin(true);
-    alert("Upload success");
+    alert("User added  successfully");
     checksignup(false);
     navigate("/");
   };
@@ -54,7 +54,7 @@ const Accounts = ({ setShowAccount }) => {
       checklogin(false);
       checksignup(false);
       set_user_data(data);
-      alert("login success");
+      alert("log success");
     }
   };
 
@@ -84,6 +84,8 @@ const Accounts = ({ setShowAccount }) => {
                   checklogin(true);
                   setShowAccount(false);
                   checksignup(false);
+                  set_user_data('');
+                 
                   navigate('/');
                 }}
               >

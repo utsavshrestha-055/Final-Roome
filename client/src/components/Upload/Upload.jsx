@@ -12,13 +12,13 @@ const Upload = ({ setShowUpload, setShowAccount }) => {
     watch,
     formState: { errors },
   } = useForm();
-  const { user } = useContext(Context);
+  const { user,user_data } = useContext(Context);
   const navigate = useNavigate();
   const onSubmit = (data) => {
     console.log(data);
     postDataToApi("/api/alls", { data: data });
     navigate("/");
-    alert('login success');
+    alert('upload success');
     setShowUpload(false);
   };
 
@@ -110,6 +110,15 @@ const Upload = ({ setShowUpload, setShowAccount }) => {
                     {...register("location", { required: true })}
                   />
                   <span>Location</span>
+                </div>
+                <div class=" w-full inputbox">
+                  <input
+                    type="text"
+                    value={user_data.data[0].attributes.username}
+                    required="required"
+                    {...register("username", { required: true })}
+                  />
+                  <span>Username</span>
                 </div>
 
                 <div class="inputbox">

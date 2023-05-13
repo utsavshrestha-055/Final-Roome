@@ -6,16 +6,21 @@ import { useNavigate } from 'react-router-dom'
 const Profile = () => {
     const Navigate = useNavigate();
     const {user_data,user,setShowAccount}=useContext(Context);
+    
+    
+   
+    
     const { data } = useFetch(`/api/alls?populate=*&filters[username]=${user_data.data[0].attributes.username}`); 
     
-    
-    
-    return (
 
+ 
+
+
+    return  (
     <div>
    
 
-    
+   
    
     <div className="Overview-main-content">
       <div className="layout">
@@ -28,16 +33,16 @@ const Profile = () => {
               }
             />
           </div>
-          <div className="right">
+          {user_data &&   <div className="right">
           <span  className="location">Name: 
-              {user_data.data[0].attributes.name}
+             {user_data.data[0].attributes.name}
                 </span>
                 <span  className="location">Username: 
               {user_data.data[0].attributes.username}
                 </span>
 
-            
           </div>
+}
         </div>
       </div>
       
@@ -82,12 +87,12 @@ const Profile = () => {
       </div>
     </div>
 
-
-         
+                  
 
 
     
     </div>
+
         
   
   )

@@ -4,8 +4,7 @@ import useFetch from "../../hooks/useFetch";
 const Rview = ({ type }) => {
   const { id } = useParams();
   const Navigate = useNavigate();
-  const { data } = useFetch(
-    `/api/alls?populate=*&filters[type]=${type}&filters[id][$ne]=${id}`
+  const { data } = useFetch( `/api/alls?populate=*&filters[type]=${type}&filters[id][$ne]=${id}`
   );
   if (!data) return;
 
@@ -22,13 +21,15 @@ const Rview = ({ type }) => {
                   onClick={() => Navigate(`/o/${item.id}`)}
                   className="thumbnail"
                 >
-                  <img
+                {item.attributes.img.data &&  <img
                     src={
                       process.env.REACT_APP_DEV_URL +
                       item.attributes.img.data[0].attributes.url
                     }
                     alt=""
                   />
+}
+
                 </div>
 
                 <div className="Rooms-details">

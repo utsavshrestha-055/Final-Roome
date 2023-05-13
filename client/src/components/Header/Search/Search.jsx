@@ -11,7 +11,7 @@ const Search = ({ setShowSearch }) => {
     setquery(event.target.value);
   };
   let { data } = useFetch(
-    `/api/alls?populate=*&filters[$or][0][desc][$containsi]=${query}&filters[$or][1][price][$contains]=${query}&filters[$or][2][title][$contains]=${query}&filters[$or][3][location][$contains]=${query}`
+    `/api/alls?populate=*&filters[$or][0][desc][$containsi]=${query}&filters[$or][1][price][$contains]=${query}&filters[$or][2][title][$contains]=${query}&filters[$or][3][location][$contains]=${query}&filters[$or][4][username][$contains]=${query}`
   );
   if (!query.length) {
     data = null;
@@ -46,13 +46,13 @@ const Search = ({ setShowSearch }) => {
             >
               <div className="image-container">
                 {" "}
-                <img
+              {item.attributes.img.data&&  <img
                   src={
                     process.env.REACT_APP_DEV_URL +
                     item.attributes.img.data[0].attributes.url
                   }
                   alt=""
-                />
+                />}
               </div>
               <div className="prod-details">
                 <span className="name">{item.attributes.type}</span>

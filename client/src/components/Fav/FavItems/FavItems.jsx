@@ -15,13 +15,13 @@ const navigate = useNavigate();
           <div key={item.id} onClick={()=>{navigate(`/o/${item.id}`);
           setShowFav(false);}} className="search-result-item">
             <div className="image-container">
-              <img
+             {item.attributes.img.data&& <img
                 src={
                   process.env.REACT_APP_DEV_URL +
                   item.attributes.img.data[0].attributes.url
                 }
                 alt=""
-              />
+              />}
             </div>
             <div className="prod-details">
               <span className="name">{item.attributes.type}</span>
