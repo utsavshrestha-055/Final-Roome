@@ -10,7 +10,7 @@ import Admin from "./components/admin dashboard/admin";
 import ContactUs from "./components/ContactUs/ContactUs";
 import AboutUs from "./components/AboutUs/AboutUs";
 import useFetch from "./components/hooks/useFetch";
-
+import Profile from "./components/Header/Profile/Profile"
 function App() {
 
   
@@ -32,6 +32,7 @@ function App() {
           <Route path="/ad/:id" element={<Admin />} />
           <Route path="cu/:id" element={<ContactUs />} />
           <Route path="au/:id" element={<AboutUs />} />
+          <Route path="/p/:id" element={<Profile/>} />
         </Routes>
         <Footer />
       </BrowserRouter>

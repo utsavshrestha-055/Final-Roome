@@ -19,6 +19,7 @@ const Header = () => {
   const {user, checkuser} = useContext(Context);
   const {user_data, set_user_data} = useContext(Context);
   
+  
   const {ShowFav, setShowFav} = useContext(Context);
   const {ShowSearch, setShowSearch} = useContext(Context);
   const {ShowAccount, setShowAccount} = useContext(Context);
@@ -46,21 +47,28 @@ const Header = () => {
             <li onClick={() => navigate("/Flats/:id")}>Flats</li>
             <li onClick={() => navigate("/Cu/:id")}>Contact Us</li>
             <li onClick={() => navigate("/au/:id")}>About us</li>
+          
           </ul>
+        
 
           <div className="right">
           <div  className="upload-btn" onClick={()=>setShowUpload(true)}> Upload </div>
             <HiOutlineSearch onClick={() => setShowSearch(true)} />
             <MdOutlineFavoriteBorder onClick={() => setShowFav(true)} />
             <RiAccountCircleLine onClick={() => setShowAccount(true)} />
-            {user && <div> {user_data.data[0].attributes.username} </div>}
+            
+         {user &&  <div onClick={()=>navigate('/p/:id')}> {user_data.data[0].attributes.name} </div>}
+      
           </div>
+
+          
         </div>
       </div>
-      {ShowFav && <Fav setShowFav={setShowFav} />}
+      {ShowFav && <Fav/>}
       {ShowSearch && <Search setShowSearch={setShowSearch} />}
       {ShowAccount && <Accounts setShowAccount={setShowAccount} />}
       {ShowUpload && <Upload setShowUpload={setShowUpload} setShowAccount={setShowAccount} />}
+      
     </div>
   );
 };

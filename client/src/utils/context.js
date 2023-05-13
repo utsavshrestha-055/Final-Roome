@@ -67,9 +67,6 @@ const AppContext = ({ children }) => {
 login,checklogin,
 signup,checksignup,
 user_data,set_user_data,
-
-
-
 ShowFav, setShowFav,
 ShowSearch, setShowSearch,
 ShowAccount, setShowAccount,

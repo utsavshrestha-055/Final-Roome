@@ -18,15 +18,15 @@ const Flats = ({heading}) => {
                   key={item.id}
                   onClick={() => Navigate(`/o/${item.id}`)}
                   className="thumbnail"
-                >
+                >{item.attributes.img.data && 
                   <img
                     className="object-contain w-full h-full"
-                    src={
+                    src={ 
                       process.env.REACT_APP_DEV_URL +
                       item.attributes.img.data[0].attributes.url
                     }
                     alt=""
-                  />
+                  />}
                 </div>
                 <div className="Flats-details">
                 <div key={item.id} className="location">

@@ -12,16 +12,19 @@ const Upload = ({ setShowUpload, setShowAccount }) => {
     watch,
     formState: { errors },
   } = useForm();
+  const { user } = useContext(Context);
+  const navigate = useNavigate();
   const onSubmit = (data) => {
     console.log(data);
     postDataToApi("/api/alls", { data: data });
+    navigate("/");
+    alert('login success');
+    setShowUpload(false);
   };
 
-  const { user } = useContext(Context);
-  const nagivate = useNavigate();
   const nologin = () => {
     alert("login first");
-    nagivate("/");
+    navigate("/");
     setShowAccount(true);
     setShowUpload(false);
   };

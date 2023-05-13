@@ -3,12 +3,21 @@ import { BsHeartbreak } from "react-icons/bs";
 import FavItems from "./FavItems/FavItems";
 import { useContext, useState, useEffect } from "react";
 import { Context } from "../../utils/context";
+import { useNavigate } from "react-router-dom";
 
-const Fav = ({ setShowFav }) => {
-  const { favitems } = useContext(Context);
+const Fav = () => {
+  const { user,favitems,setShowFav,setShowAccount } = useContext(Context);
+const navigate = useNavigate();
+  const nologin = () => {
+    alert("login first");
+    navigate("/");
+    setShowAccount(true);
+    setShowFav(false);
+  };
 
   return (
     <div className="fav-panel">
+      {!user && nologin()}
       <div className="opac-layer"></div>
       <div className="fav-content">
         <div className="fav-header">
