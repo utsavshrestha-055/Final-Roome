@@ -4,8 +4,7 @@
   "info": {
     "singularName": "all",
     "pluralName": "alls",
-    "displayName": "all",
-    "description": ""
+    "displayName": "all"
   },
   "options": {
     "draftAndPublish": true
@@ -16,15 +15,14 @@
       "type": "string"
     },
     "img": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ]
+      ],
+      "type": "media",
+      "multiple": true
     },
     "contact": {
       "type": "biginteger"

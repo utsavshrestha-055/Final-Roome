@@ -11,6 +11,7 @@ import { useForm } from "react-hook-form";
 import { postDataToApi } from "../../utils/api";
 
 const Accounts = ({ setShowAccount }) => {
+  const [image, setImage] = useState();
   const {
     register,
     handleSubmit,
@@ -21,12 +22,24 @@ const Accounts = ({ setShowAccount }) => {
   const navigate = useNavigate();
   const onSubmit = (data) => {
     console.log(data);
-    postDataToApi("/api/owners", { data: data });
-    checklogin(true);
-    alert("User added  successfully");
+   
+    let file = new FormData();
+    file.append("files", image[0]);
+    postDataToApi("/api/upload", file)
+      .then((res) => {
+        const fileId = res[0].id;
+        postDataToApi("/api/owners", { data: { ...data, img: fileId } });
+      })
+      .catch((err) => console.log(err));
+
+    alert("User Added successfully");
     checksignup(false);
+    checklogin(true);
+  
+    
     navigate("/");
   };
+
 
   const Navigate = useNavigate();
   const { email, setEmail } = useContext(Context);
@@ -236,7 +249,7 @@ const Accounts = ({ setShowAccount }) => {
                         for="img"
                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                       >
-                        Image
+                        Your Image
                       </label>
                       <input
                         accept="image/*"
@@ -244,6 +257,7 @@ const Accounts = ({ setShowAccount }) => {
                         id="img"
                         required="required"
                         {...register("img", { required: true })}
+                        onChange={(e) => setImage(e.target.files)}
                         class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       />
                     </div>

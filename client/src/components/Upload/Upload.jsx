@@ -5,7 +5,9 @@ import { Context } from "../../utils/context";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { postDataToApi } from "../../utils/api";
+import { useState } from "react";
 const Upload = ({ setShowUpload, setShowAccount }) => {
+  const [image, setImage] = useState();
   const {
     register,
     handleSubmit,
@@ -13,13 +15,24 @@ const Upload = ({ setShowUpload, setShowAccount }) => {
     formState: { errors },
   } = useForm();
   const { user,user_data } = useContext(Context);
+
   const navigate = useNavigate();
+  
   const onSubmit = (data) => {
     console.log(data);
-    postDataToApi("/api/alls", { data: data });
-    navigate("/");
-    alert('upload success');
+    
+    let file = new FormData();
+    file.append("files", image[0]);
+    postDataToApi("/api/upload", file)
+      .then((res) => {
+        const fileId = res[0].id;
+        postDataToApi("/api/alls", { data: { ...data, img: fileId } });
+      })
+      .catch((err) => console.log(err));
+
+    alert("upload success");
     setShowUpload(false);
+    navigate("/");
   };
 
   const nologin = () => {
@@ -60,6 +73,7 @@ const Upload = ({ setShowUpload, setShowAccount }) => {
                     required="required"
                     accept="image/*"
                     {...register("img", { required: true })}
+                    onChange={(e) => setImage(e.target.files)}
                   />
                 </div>
                 <div class=" w-full inputbox">

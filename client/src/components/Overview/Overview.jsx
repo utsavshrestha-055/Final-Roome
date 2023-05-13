@@ -15,10 +15,11 @@ import "./Overview.scss";
 import { Context } from "../../utils/context";
 
 const Overview = () => {
-  const { handleAddToFav,user,setShowAccount } = useContext(Context);
+  const { handleAddToFav,user,setShowAccount,set_user_for_profile } = useContext(Context);
 const Navigate = useNavigate();
   const { id } = useParams();
-  const { data } = useFetch(`/api/alls?populate=*&[filters][id]=${id}`);
+ 
+  let { data } = useFetch(`/api/alls?populate=*&[filters][id]=${id}`);
   if (!data) return;
   const product = data?.data?.[0].attributes;
 const nologin=()=>{
@@ -29,6 +30,9 @@ const nologin=()=>{
 
 const call_profile=()=>{
   if (user){
+
+    
+   
     Navigate('/p/:id');
   }
   else{
@@ -60,7 +64,7 @@ return  (
               <span className="name">{product.contact}</span>
               <span className="price">रू {product.price}</span>
               <span className="desc">{product.desc}</span>
-             <div className="name"> Owner:</div> <div className="username"onClick={()=>call_profile()}>{product.username}</div>
+             <div className="name"> Owner:</div> <div className="username"onClick={()=>{set_user_for_profile(product.username);call_profile();}}>{product.username}</div>
               
               <div className="cart-buttons">
                 <button

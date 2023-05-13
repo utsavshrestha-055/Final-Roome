@@ -48,6 +48,10 @@ const AppContext = ({ children }) => {
   };
 
 
+  const [user_for_profile, set_user_for_profile] = useState('');
+  
+
+
 
   const handleRemoveFromFav = (rooms) => {
     let items = [...favitems];
@@ -71,7 +75,7 @@ ShowFav, setShowFav,
 ShowSearch, setShowSearch,
 ShowAccount, setShowAccount,
 ShowUpload, setShowUpload,
-
+user_for_profile, set_user_for_profile
 }}
     >
       {children}

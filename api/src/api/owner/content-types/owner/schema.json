@@ -4,8 +4,7 @@
   "info": {
     "singularName": "owner",
     "pluralName": "owners",
-    "displayName": "owner",
-    "description": ""
+    "displayName": "owner"
   },
   "options": {
     "draftAndPublish": true
@@ -19,15 +18,14 @@
       "type": "string"
     },
     "img": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ]
+      ],
+      "type": "media",
+      "multiple": true
     },
     "name": {
       "type": "string"

@@ -1,12 +1,14 @@
 import "./R-view.scss";
 import { useNavigate, useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
+import { useEffect } from "react";
 const Rview = ({ type }) => {
+
   const { id } = useParams();
   const Navigate = useNavigate();
-  const { data } = useFetch( `/api/alls?populate=*&filters[type]=${type}&filters[id][$ne]=${id}`
-  );
-  if (!data) return;
+  let { data } = useFetch( `/api/alls?populate=*&filters[type]=${type}&filters[id][$ne]=${id}`);
+
+  
 
   return (
     <div className="Rooms-container">
@@ -15,10 +17,10 @@ const Rview = ({ type }) => {
         <>
           {data &&
             data.data.map((item) => (
-              <div className="RelatedRooms-card">
+              <div key={item.id} className="RelatedRooms-card">
                 <div
-                  key={item.id}
-                  onClick={() => Navigate(`/o/${item.id}`)}
+                  
+                  onClick={() => Navigate(`/o/${item.id} `)}
                   className="thumbnail"
                 >
                 {item.attributes.img.data &&  <img
@@ -32,11 +34,11 @@ const Rview = ({ type }) => {
 
                 </div>
 
-                <div className="Rooms-details">
-                <span key={item.id} className="location">
+                <div  className="Rooms-details">
+                <span  className="location">
                     {item.attributes.location}
                   </span>
-                  <span key={item.id} className="price">
+                  <span  className="price">
                     &#8377;{item.attributes.price}
                   </span>
                 </div>

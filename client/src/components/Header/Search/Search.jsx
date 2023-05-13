@@ -55,10 +55,11 @@ const Search = ({ setShowSearch }) => {
                 />}
               </div>
               <div className="prod-details">
-                <span className="name">{item.attributes.type}</span>
-                <span className="name">{item.attributes.location}</span>
+              <span className="name">Owner: {item.attributes.username}</span>
+                <span className="name">Type: {item.attributes.type}</span>
+                <span className="name">Location: {item.attributes.location}</span>
                 <span className="price">रू {item.attributes.price}</span>
-                <span className="desc">{item.attributes.desc}</span>
+                <span className="desc">Description: {item.attributes.desc}</span>
               </div>
             </div>
           ))}
