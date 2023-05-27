@@ -55,7 +55,7 @@ const Upload = ({ setShowUpload, setShowAccount }) => {
             <div class="center">
               <h1>Upload</h1>
               <form
-                className="w-full px-8 pt-6 pb-8 mb-4 bg-white rounded shadow-sm "
+                className="px-8 pt-6 pb-8 mb-4 bg-white rounded shadow-sm "
                 onSubmit={handleSubmit(onSubmit)}
               >
                 <div class="inputbox mb-4">
@@ -66,7 +66,7 @@ const Upload = ({ setShowUpload, setShowAccount }) => {
                   />
                   <span>Title</span>
                 </div>
-                <div class=" w-full inputbox">
+                <div class=" inputbox">
                   <input
                     type="file"
                     placeholder="image"
@@ -76,7 +76,7 @@ const Upload = ({ setShowUpload, setShowAccount }) => {
                     onChange={(e) => setImage(e.target.files)}
                   />
                 </div>
-                <div class=" w-full inputbox">
+                <div class="inputbox">
                   <input
                     type="number"
                     required="required"
@@ -85,7 +85,7 @@ const Upload = ({ setShowUpload, setShowAccount }) => {
                   <span>Contact</span>
                 </div>
 
-                <div class="w-full inputbox">
+                <div class="inputbox">
                   <input
                     type="number"
                     required="required"
@@ -93,7 +93,7 @@ const Upload = ({ setShowUpload, setShowAccount }) => {
                   />
                   <span>Price</span>
                 </div>
-                <div class="w-full inputbox">
+                <div class="inputbox">
                   <input
                     type="text"
                     required="required"
@@ -117,7 +117,7 @@ const Upload = ({ setShowUpload, setShowAccount }) => {
                     <option value="flats">Flat</option>
                   </select>
                 </div>
-                <div class=" w-full inputbox">
+                <div class="inputbox">
                   <input
                     type="text"
                     required="required"
@@ -125,7 +125,7 @@ const Upload = ({ setShowUpload, setShowAccount }) => {
                   />
                   <span>Location</span>
                 </div>
-                <div class=" w-full inputbox">
+                <div class="inputbox">
                   <input
                     type="text"
                     value={user_data.data[0].attributes.username}

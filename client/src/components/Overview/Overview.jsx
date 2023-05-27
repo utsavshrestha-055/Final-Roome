@@ -57,15 +57,21 @@ return  (
               /> }
             </div>
             <div className="right">
+
+            <span className="category">
+                  Category:{product.type}
+                 
+                </span>
+
             <span  className="location">Location: 
                 {product.location}
                   </span>
                  
               <span className="name">{product.contact}</span>
-              <span className="price">रू {product.price}</span>
+             
               <span className="desc">{product.desc}</span>
              <div className="name"> Owner:</div> <div className="username"onClick={()=>{set_user_for_profile(product.username);call_profile();}}>{product.username}</div>
-              
+             <span className="price">रू {product.price}</span>
               <div className="cart-buttons">
                 <button
                   className="add-to-cart-button"
@@ -86,20 +92,9 @@ return  (
 
               <span className="divider" />
               <div className="info-item">
-                <span className="text-bold">
-                  Category:{product.type}
-                  <span></span>
-                </span>
-                <span className="text-bold">
-                  Share:
-                  <span className="social-icons">
-                    <FaFacebookF size={16} />
-                    <FaTwitter size={16} />
-                    <FaInstagram size={16} />
-                    <FaLinkedinIn size={16} />
-                    <FaPinterest size={16} />
-                  </span>
-                </span>
+                
+               
+             
               </div>
             </div>
           </div>

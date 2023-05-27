@@ -89,7 +89,7 @@ const Accounts = ({ setShowAccount }) => {
            
             <h1>{user_data.data[0].attributes.name}</h1>
             <p class="title"></p>
-            <p>Harvard University</p>
+           
             <p>
               <button
                 onClick={() => {

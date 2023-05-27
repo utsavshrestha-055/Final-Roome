@@ -47,6 +47,15 @@
             line-height: 32px;
           }
         }
+        .category{
+          font-size: 20px;
+          line-height: 28px;
+          margin-bottom: 20px;
+          @include md {
+            font-size: 24px;
+            line-height: 32px;
+          }
+        }
         .location {
           font-size: 24px;
           line-height: 32px;
