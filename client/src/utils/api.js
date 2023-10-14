@@ -1,10 +1,6 @@
 import axios from "axios";
 
-const params = {
-  headers: {
-    Authorization: "Bearer " + process.env.REACT_APP_STRIPE_APP_KEY,
-  },
-};
+const params = {};
 
 export const fetchDataFromApi = async (url) => {
   try {
@@ -21,7 +17,7 @@ export const fetchDataFromApi = async (url) => {
 
 export const postDataToApi = async (url, formData) => {
   try {
-    const { data } = await axios.post(
+    const { data } = await axios.get(
       process.env.REACT_APP_DEV_URL + url,
       formData,
       params

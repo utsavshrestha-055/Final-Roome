@@ -4,7 +4,8 @@
   "info": {
     "singularName": "all",
     "pluralName": "alls",
-    "displayName": "all"
+    "displayName": "all",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,26 +13,24 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "img": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
       "type": "media",
-      "multiple": true
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "contact": {
-      "type": "biginteger"
+      "type": "biginteger",
+      "required": true
     },
     "price": {
-      "type": "decimal"
-    },
-    "desc": {
-      "type": "text"
+      "type": "decimal",
+      "required": true
     },
     "type": {
       "type": "enumeration",
@@ -41,10 +40,15 @@
       ]
     },
     "location": {
-      "type": "text"
+      "type": "string",
+      "required": true
     },
     "username": {
-      "type": "string"
+      "type": "string",
+      "required": true
+    },
+    "desc": {
+      "type": "richtext"
     }
   }
 }

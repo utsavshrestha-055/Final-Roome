@@ -6,6 +6,7 @@ const Rooms = ({ heading }) => {
   const Navigate = useNavigate();
   const { data } = useFetch(`/api/alls?populate=*&filters[type]=rooms`);
   if (!data) return;
+  console.log(data);
 
   return (
     <div className="Rooms-container ">
@@ -13,8 +14,8 @@ const Rooms = ({ heading }) => {
       <div className="grid grid-cols-5 gap-4 pl-8 Rooms">
         <>
           {data &&
-            data.data.map((item) => (
-              <div className="RelatedRooms-card">
+            data.data.map((item,key) => (
+              <div className="RelatedRooms-card" key={key}>
                 <div
                   key={item.id}
                   onClick={() => Navigate(`/o/${item.id}`)}
