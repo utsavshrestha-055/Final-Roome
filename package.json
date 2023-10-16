@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "@strapi/plugin-graphql": "^4.10.5",
-    "strapi-plugin-graphql": "^3.6.11"
-  }
-}
